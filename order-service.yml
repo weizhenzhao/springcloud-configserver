@@ -1,0 +1,60 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8181/eureka
+spring:
+  application:
+    name: eureka-client-orders-feign
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 2000
+    password:
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1
+server:
+  port: 8188
+ribbon:
+  eureka:
+    enabled: true
+
+
+# 禁用hystrix超时时间
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
+
+
+# 修改hystrix的超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+
+
+feign:
+  # 开启feign对hystrix熔断降级的支持
+  hystrix:
+    enabled: true
+  # 修改调用超时时间
+  client:
+    config:
+      default:
+        connectTimeout: 200
+        readTimeout: 200
+
+#hystrix dashboard 监控 增加endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
