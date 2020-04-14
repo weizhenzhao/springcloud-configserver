@@ -1,10 +1,10 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8181/eureka
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8181/eureka
 spring:
   application:
-    name: eureka-client-orders-feign
+    name: order-service
   redis:
     host: 127.0.0.1
     port: 6379
