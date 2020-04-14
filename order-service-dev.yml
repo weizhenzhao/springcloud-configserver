@@ -59,5 +59,5 @@ management:
       exposure:
         include: "*"
 
-env: default
-branch: master
+env: test
+branch: test
