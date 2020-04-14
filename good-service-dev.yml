@@ -10,3 +10,5 @@ server:
 ribbon:
   eureka:
     enabled: true
+env: test
+branch: test
