@@ -59,5 +59,5 @@ management:
       exposure:
         include: "*"
 
-env: dev
+env: prod
 branch: master
