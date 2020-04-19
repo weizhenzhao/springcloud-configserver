@@ -62,3 +62,6 @@ management:
 
 env: dev
 branch: master
+
+svc:
+  url: http://121.40.215.64:8183
