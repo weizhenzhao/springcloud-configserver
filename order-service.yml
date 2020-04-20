@@ -60,7 +60,7 @@ management:
       exposure:
         include: "*"
 
-env: dev
+env: dev12345
 branch: master
 
 svc:
